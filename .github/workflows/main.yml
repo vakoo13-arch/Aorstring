@@ -12,7 +12,7 @@ jobs:
 
       - name: Unzip project if uploaded as zip
         run: |
-          if [ -f AirString-android.zip ]; then unzip -o -q AirString-android.zip; fi
+          if [ for z in *.zip; do unzip -o -q "$z"; done
           if [ -d AirString/app ]; then echo "PROJ=AirString" >> $GITHUB_ENV; else echo "PROJ=." >> $GITHUB_ENV; fi
 
       - uses: actions/setup-java@v4
